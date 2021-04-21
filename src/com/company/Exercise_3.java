@@ -27,14 +27,14 @@ public class Exercise_3 {
         int count = 0;
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] == 2) {
+                i++;
                 count++;
-
             }
-
-
+            if (count == 2) {
+                twoTwo = true;
+                count = 0;
+            }
         }
         System.out.println(Arrays.toString(array) + twoTwo);
-
-
     }
 }

@@ -1,3 +1,7 @@
+/* Given a non-empty array, print true if there is a place to split the
+array so that the sum of the numbers on one side is equal to the sum of
+the numbers on the other side */
+
 package com.company;
 
 import java.util.Arrays;
@@ -8,31 +12,29 @@ public class Exercise_5 {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number of the array: ");
         int arrayLength = scanner.nextInt();
+        System.out.print("Enter the array value: ");
 
-        int[] newArray = new int[arrayLength];
-        for (int i = 0; i < newArray.length; i++) {
-            int random = (int)(Math.random() * 5);
-            newArray[i] = random;
+        int[] array = new int[arrayLength];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
         }
         boolean canBalance = false;
-        int sum = 0;
-        int sum1 = 0;
-        for (int i = 0; i < newArray.length; i++) {
-            for (int j = i; j < newArray.length; j++) {
-                sum += newArray[i];
-                sum1 += newArray[j];
-                if (sum == sum1){
-                    canBalance = true;
-                }
-            }
-
-
+        int sumArrayNumbers = 0;
+        for (int i = 0; i < array.length; i++) {
+            sumArrayNumbers += array[i];
         }
-        System.out.println(Arrays.toString(newArray));
-        System.out.println(canBalance);
-
-
-
+        int left = 0;
+        int right = sumArrayNumbers;
+        for (int i = 0; i < array.length; i++) {
+            left += array[i];
+            right -= array[i];
+            if (left == right) {
+                canBalance = true;
+                break;
+            }
+        }
+        System.out.println("canBalance(" + Arrays.toString(array) + ") → " + canBalance);
     }
 }

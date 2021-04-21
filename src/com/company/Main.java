@@ -10,8 +10,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the length of the array: ");
-        int l = scanner.nextInt();
-        int[] array = new int[l];
+        int arrayLength = scanner.nextInt();
+        int[] array = new int[arrayLength];
         for (int i = 0; i < array.length; i++) {
             int random = (int) (Math.random() * 20);
             array[i] = random;
