@@ -1,40 +1,35 @@
+// Given an array of ints, print true if every 2 that appears in the array is next to another 2
+
 package com.company;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Exercise_3 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the length of the array: ");
-        int l = scanner.nextInt();
-        int[] array = new int[l];
-        System.out.print("Fill the array randomly/true/ or from the console/false/?: ");
-        boolean request = scanner.nextBoolean();
-        if (request) {
-            for (int i = 0; i < array.length; i++) {
-                int random = (int) (Math.random() * 11 + 13);
-                array[i] = random;
-            }
-        } else if (!request) {
-            System.out.println("Enter values: ");
-            for (int i = 0; i < array.length; i++) {
-                array[i] = scanner.nextInt();
-            }
-        }
-        boolean twoTwo = false;
+
+        int[] array = new int[]{2, 2, 2, 2, 2};
         int count = 0;
-        for (int i = 0; i < array.length - 1; i++) {
+        boolean twoTwo = true;
+        for (int i = 0; i < array.length; i++) {
             if (array[i] == 2) {
                 count++;
-
             }
-
-
         }
-        System.out.println(Arrays.toString(array) + twoTwo);
-
-
+        if (count % 2 != 0 || count == 0) {
+            twoTwo = false;
+        } else {
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] == 2 && array[i + 1] != 2) {
+                    twoTwo = false;
+                    break;
+                }
+                if (array[i] == 2 && array[i + 1] == 2) {
+                    i += 2;
+                }
+            }
+        }
+        System.out.println("twoTwo(" + Arrays.toString(array) + ") → " + twoTwo);
     }
 }
+

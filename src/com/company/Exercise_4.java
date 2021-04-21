@@ -1,3 +1,6 @@
+/* Create a program that takes two numbers as arguments (num, length)
+and prints an array of multiples of num until the array length reaches length */
+
 package com.company;
 
 import java.util.Arrays;
