@@ -17,8 +17,8 @@ public class Exercise_1 {
             array[i] = random;
         }
         int countEvens = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
+        for (int i : array) {
+            if (i % 2 == 0) {
                 countEvens++;
             }
         }

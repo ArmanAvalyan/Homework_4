@@ -22,7 +22,7 @@ public class Exercise_2 {
                 int random = (int) (Math.random() * 13);
                 array[i] = random;
             }
-        } else if (!request) {
+        } else {
             System.out.println("Enter values: ");
             for (int i = 0; i < array.length; i++) {
                 array[i] = scanner.nextInt();

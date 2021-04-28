@@ -10,7 +10,7 @@ public class Exercise_4 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the first number of the array: ");
+        System.out.print("Enter the first value of the array: ");
         int firstNumber = scanner.nextInt();
         System.out.print("Enter the length of the array: ");
         int lengthArray = scanner.nextInt();
