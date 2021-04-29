@@ -3,12 +3,20 @@
 package com.company;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Exercise_3 {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the length of the array: ");
+        int arrayLength = scanner.nextInt();
+        int[] array = new int[arrayLength];
+        System.out.println("Enter the array values: ");
 
-        int[] array = {2, 2, 3, 2};
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.nextInt();
+        }
         int count = 0;
         boolean twoTwo = true;
         for (int i : array) {
